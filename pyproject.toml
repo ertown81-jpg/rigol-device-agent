@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rigol-ds1102ze-agent"
+version = "4.1.0"
+description = "An extensible, safety-bounded intelligent device agent with reviewed device packs"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pyvisa>=1.14,<2",
+  "pyvisa-py>=0.7,<1",
+  "pyusb>=1.2,<2",
+  "psutil>=5.9,<8",
+  "zeroconf>=0.131,<1",
+]
+
+[project.optional-dependencies]
+model = ["openai>=1.68,<3"]
+
+[project.scripts]
+rigol-agent = "rigol_agent.cli:main"
+device-agent = "rigol_agent.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["rigol_agent*", "src*"]

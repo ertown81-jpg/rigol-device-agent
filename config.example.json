@@ -1,0 +1,8 @@
+{
+  "resource": "",
+  "ip": "",
+  "backend": "",
+  "timeout_ms": 10000,
+  "query_delay_s": 0.05,
+  "monitor_interval_s": 3.0
+}

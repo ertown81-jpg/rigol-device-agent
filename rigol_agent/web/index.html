@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>智能设备 Agent</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+<header><div><p id="pack-name" class="eyebrow">DEVICE PACK / LOCAL CONTROL</p><h1 id="agent-title">智能设备 Agent</h1><p id="planner-state" class="planner-state">规划器：正在读取</p></div><button id="refresh" class="ghost">刷新设备</button></header>
+<main>
+  <section class="device-pack-card">
+    <div class="pack-copy"><p class="eyebrow">DEVICE MANAGER</p><h2>选择要控制的设备</h2><p id="pack-description">正在读取后端已安装的设备包。</p></div>
+    <div class="pack-controls">
+      <label for="device-pack-select">可用设备</label>
+      <div class="pack-select-row"><select id="device-pack-select" aria-label="可用设备"></select><button id="switch-device" type="button">切换设备</button></div>
+      <small id="pack-status">正在读取设备列表</small>
+    </div>
+    <div id="capability-summary" class="capability-summary"><span>能力</span><b>正在读取</b></div>
+  </section>
+  <section class="status-card">
+    <div><span id="dot" class="dot pending"></span><strong id="device-state">正在读取设备</strong><p id="device-meta">请保持 USB 连接</p></div>
+    <div id="metrics" class="metrics"><div><span>状态</span><b>—</b></div></div>
+  </section>
+  <section class="command-card">
+    <p class="eyebrow">DESCRIBE THE TASK</p><h2 id="task-title">你希望设备做什么？</h2>
+    <form id="task-form"><textarea id="request" rows="3" placeholder="例如：读取设备状态"></textarea><button id="run" type="submit">执行任务</button></form>
+    <div id="quick-tasks" class="quick"></div>
+  </section>
+  <section id="result" class="result-card empty"><p>执行结果会显示在这里。</p></section>
+  <section><div class="section-title"><h2>最近任务</h2><span>本机保存</span></div><div id="history" class="history"></div></section>
+</main>
+<footer>所有设备操作均经过能力包参数校验与本地安全策略。底层协议不向任务规划器开放。</footer>
+<script src="/app.js"></script></body></html>
